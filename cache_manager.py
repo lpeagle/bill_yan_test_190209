@@ -29,13 +29,13 @@ class CacheManager:
                 self._update_item_time(item, current_time)
                 return item.value
             else:
-                print('item {} is expired')
+                print('item {} is expired'.format(item.key))
                 self.remove(key)
         return None
 
     def remove(self, key):
         if key in self.items:
-            print('item {} is removed')
+            print('item {} is removed'.format(key))
             self.items.pop(key)
 
     def _update_item_time(self, item, time):
